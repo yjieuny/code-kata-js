@@ -1,0 +1,40 @@
+/*
+## 문제
+strs은 단어가 담긴 배열입니다.
+공통된 시작 단어(prefix)를 반환해주세요.
+
+예를 들어
+strs = ['start', 'stair', 'step']
+return은 'st'
+strs = ['start', 'wework', 'today']
+return은 ''
+*/
+
+
+
+const getPrefix = strs => {
+	if (strs.length === 0) {
+		return '';
+	}
+	let prefix = strs[0];
+	for (let i = 1; i < strs.length; i++) {
+		while (strs[i].indexOf(prefix) !== 0) {
+			prefix = prefix.slice(0, prefix.length - 1);
+			if (prefix === '') {
+				return '';
+			}
+		}
+	}
+
+	return prefix;
+};
+
+const strs1 = ['start', 'stair', 'step'];
+const result1 = getPrefix(strs1);
+console.log(`result1: ${result1}`); //st
+
+const strs2 = ['start', 'wework', 'today'];
+const result2 = getPrefix(strs2);
+console.log(`result2: ${result2}`);
+
+module.exports = { getPrefix };
