@@ -13,28 +13,24 @@ return은 ''
 
 
 const getPrefix = strs => {
-	if (strs.length === 0) {
-		return '';
-	}
-	let prefix = strs[0];
-	for (let i = 1; i < strs.length; i++) {
-		while (strs[i].indexOf(prefix) !== 0) {
-			prefix = prefix.slice(0, prefix.length - 1);
-			if (prefix === '') {
-				return '';
-			}
-		}
-	}
-
-	return prefix;
+ let prefix = strs[0];
+ for (let i = 1; i < strs.length; i++) {
+  while(strs[i].indexOf(prefix) !== 0) {
+  prefix = prefix.slice(0, prefix.length - 1);
+   if (prefix === '') {
+    return '';
+    }
+   }
+  }
+ return prefix;
 };
 
 const strs1 = ['start', 'stair', 'step'];
 const result1 = getPrefix(strs1);
-console.log(`result1: ${result1}`); //st
+console.log(`result1: ${result1}`);   //st
 
-const strs2 = ['start', 'wework', 'today'];
+const strs2 = ['start', 'work', 'today'];
 const result2 = getPrefix(strs2);
-console.log(`result2: ${result2}`);
+console.log(`result2: ${result2}`);   //
 
 module.exports = { getPrefix };
