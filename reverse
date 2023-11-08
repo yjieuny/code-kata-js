@@ -33,6 +33,9 @@ const reverse = x => {
     return parseInt(str)
   }
 }
+
+console.log(reverse(1234))   //4321
+console.log(reverse(-1234))  //-4321
 console.log(reverse(1230))   //321
 
 module.exports = { reverse };
