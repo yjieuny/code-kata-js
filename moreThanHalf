@@ -22,11 +22,11 @@ function moreThanHalf(nums) {
     let filteredArray = nums.filter((num) => num === nums[i]);
     if (filteredArray.length > nums.length / 2) {
       return nums[i];
-    } else {
-      return undefined;
     }
   }
+  return undefined;
 }
 
-console.log(moreThanHalf([3, 2, 3]));   // 3
-console.log(moreThanHalf([3, 2]));      //undefined
+console.log(moreThanHalf([3,2,3]));       //3
+console.log(moreThanHalf([2,2,1,1,1]));   //1
+console.log(moreThanHalf([1,2]));         //undefined
