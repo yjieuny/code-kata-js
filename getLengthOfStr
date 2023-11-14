@@ -1,3 +1,4 @@
+/*
 # 문제
 String 형인 str 인자에서 중복되지 않은 알파벳으로 이루어진 제일 긴 단어의 길이를 반환해주세요.
 
@@ -16,6 +17,8 @@ return 은 1
 str = "sttrg"
 return 은 3
 => 'trg' 가 제일 길기 때문
+*/
+
 
 
 const getLengthOfStr = str => {
