@@ -25,7 +25,30 @@ function getMaxArea(height) {
         maxArea = Math.max(maxArea, area);
       }
     }
-  } return maxArea;
+  }
+  return maxArea;
 }
-console.log(getMaxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]))
+console.log(getMaxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])) //49
 module.exports = { getMaxArea };
+
+
+
+--------------------- Readability up ---------------------
+
+function getMaxArea(height) {
+  let maxArea = 0;
+
+  for (let left = 0; left < height.length; left++) {
+    for (let right = left + 1; right < height.length; right++) {
+      let h = Math.min(height[left], height[right]);
+      let w = right - left;
+      let area = h * w;
+
+      maxArea = Math.max(maxArea, area);
+    }
+  }
+  return maxArea;
+}
+
+const height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+console.log(getMaxArea(height)) //49
