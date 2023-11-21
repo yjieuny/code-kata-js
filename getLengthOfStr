@@ -38,8 +38,32 @@ const getLengthOfStr = str => {
 
 console.log(getLengthOfStr("abcabcabc")) //3
 console.log(getLengthOfStr("aaaaa")) //1
-console.log(getLengthOfStr("sttrg")) //3     s와 trg 중 긴 단어는 trg이기 때문
-console.log(getLengthOfStr("dodoyoon")) //3  doy와 n 중 긴 단어는 doy이기 때문
+console.log(getLengthOfStr("sttrg")) //3
+console.log(getLengthOfStr("dodoyoon")) //3
+
+
+
+------------------------- otherCase -------------------------
+const getLengthOfStr = str => {
+  let topLength = 0;
+  let arr = []
+
+  for(let i = 0; i < str.length; i++) {
+    if(arr.indexOf(str[i]) === -1) {
+      arr.push(str[i]);
+    }
+    else {
+      arr = arr.slice(arr.indexOf(str[i]) + 1);
+      arr.push(str[i])
+    }
+    if(topLength < arr.length) {
+      topLength = arr.length;
+    } console.log(arr)
+  }
+  return topLength;
+}
+
+console.log(getLengthOfStr("aabbcc")); //2
 
 
 
@@ -60,4 +84,4 @@ const getLengthOfShortestStr = str => {
   return minLength;
 }
 
-console.log(getLengthOfShortestStr("dodoyoon")); //1  doy와 n 중 짧은 단어는 n이기 때문
+console.log(getLengthOfShortestStr("dodoyoon")); //1
