@@ -1,0 +1,4 @@
+function result(str, n) {
+  return str.repeat(n);
+}
+console.log(result('string', 5)) //"stringstringstringstringstring"
