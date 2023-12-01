@@ -20,10 +20,5 @@ rl.on('line', function (line) {
 }).on('close', function () {
     str = input[0];
     n = Number(input[1]);
-    result = repeatString(str, n);
-    console.log(result);
+    console.log(str.repeat(n)); //stringstringstringstringstring
 });
-
-function repeatString(str, n) {
-    return str.repeat(n)
-}
