@@ -46,3 +46,23 @@ function toggleCase(str) {
     }
     return result;
 }
+
+
+
+--------------- Other case ---------------
+let input = [];
+
+rl.on('line', function (line) {
+    input = [line];
+}).on('close',function(){
+    str = input[0];
+    toggle = "";
+    for(let i of str){
+        if(i ==  i.toUpperCase()){
+            toggle += i.toLowerCase();
+        } else {
+            toggle += i.toUpperCase();
+        }
+    }
+    console.log(toggle)
+});
