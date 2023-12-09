@@ -23,3 +23,9 @@ rl.on('line', function (line) {
     } 
     console.log(result);
 });
+
+
+
+---------------Other case---------------
+    n = Number(input[0]);
+    console.log(n%2===0? `${n} is even`:`${n} is odd`)
