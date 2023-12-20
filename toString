@@ -39,7 +39,7 @@ function solution(a, b) {
 
 
 function solution(a, b) {
-    const plus = a.toString() + b.toString()
+    const strPlus = a.toString() + b.toString()
     const multiplyAndDouble = 2 * a * b
     return Math.max(plus, multiplyAndDouble)
 }
