@@ -9,8 +9,13 @@
 
 
 function solution(a, b, c) {
-    let sum = a + b + c
-    if ( a !== b && a !== c && b !== c ) {
-        return sum
+    let array = [a, b, c];
+    let sum = a + b + c;
+
+    if (a !== b && a !== c && b !== c) {
+        return sum;
+    } else if (a === b || a === c || b === c) {
+        let squareSum = array.reduce((a, b) => a + Math.pow(b, 2), 0);
+        return sum * squareSum;
     }
 }
