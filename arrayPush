@@ -1,0 +1,35 @@
+/*
+문제
+정수 n이 주어질 때 1부터 n까지의 정수를 순서대로 담은 배열을 리턴하도록 solution 함수를 작성해주세요.
+*/
+
+function solution(n) {
+  let answer = [];
+  for(let i=0; i<n; i++)
+    answer.push(i+1);    //빈칸 채우기
+  return answer;
+}
+
+console.log(solution(3)) //[1,2,3]
+console.log(solution(5)) //[1,2,3,4,5]
+
+
+/*
+문제
+정수 리스트 num_list가 주어질 때, 마지막 원소가 그전 원소보다 크면 마지막 원소에서 그전 원소를 뺀 값을,
+마지막 원소가 그전 원소보다 크지 않다면 마지막 원소를 두 배한 값을 추가하여 return하도록 solution 함수를 완성해주세요.
+*/
+
+function solution(num_list) {
+    let lastElement = num_list[num_list.length - 1];
+    let beforeElement = num_list[num_list.length - 2];
+    if (lastElement > beforeElement) {
+        num_list.push(lastElement - beforeElement)
+    } else {
+        num_list.push(lastElement * 2)
+    }
+    return num_list
+}
+
+console.log(solution([2, 1, 6])) //[2, 1, 6, 5]
+console.log(solution([2, 7, 5])) //[2, 7, 5, 10]
