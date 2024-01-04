@@ -1,21 +1,8 @@
-## 문제
-reverse 함수에 정수인 숫자를 인자로 받습니다.
-그 숫자를 뒤집어서 return해주세요.
-
-x: 숫자
-return: 뒤집어진 숫자를 반환!
-
-
-예들 들어,
-x: 1234
-return: 4321
-
-x: -1234
-return: -4321
-
-x: 1230
-return: 321
-
+/*
+문제
+reverse 함수에 정수인 숫자를 인자로 받습니다. 그 숫자를 뒤집어서 return해주세요.
+x: 숫자, return: 뒤집어진 숫자를 반환
+*/
 
 const reverse = x => {
   const string = String(x);
@@ -38,4 +25,18 @@ console.log(reverse(1234))   //4321
 console.log(reverse(-1234))  //-4321
 console.log(reverse(1230))   //321
 
-module.exports = { reverse };
+
+
+/*
+문제
+정수 리스트 num_list가 주어질 때, 마지막 원소가 그전 원소보다 크면 마지막 원소에서 그전 원소를 뺀 값을,
+마지막 원소가 그전 원소보다 크지 않다면 마지막 원소를 두 배한 값을 추가하여 return하도록 solution 함수를 완성해주세요.
+*/
+
+function solution(num_list) {
+    const [a, b] = [...num_list].reverse();
+    return [...num_list, a > b ? (a-b) : a * 2]
+}
+
+console.log(solution([2, 1, 6])) //[2, 1, 6, 5]
+console.log(solution([2, 7, 5])) //[2, 7, 5, 10]
