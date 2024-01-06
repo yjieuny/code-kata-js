@@ -5,8 +5,9 @@
 
 function solution(n) {
   let answer = [];
-  for(let i=0; i<n; i++)
+  for (let i = 0; i < n; i++) {
     answer.push(i+1); //빈칸 채우기
+  }
   return answer;
 }
 
